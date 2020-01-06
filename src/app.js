@@ -32,14 +32,14 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        name: 'Vil'
+        name: 'Vilgottt'
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help Page',
-        helpMes: 'Need Help',
+        helpMes: 'Contact administrator for further help',
         name: 'Vilgottt'
     })
 })
@@ -51,7 +51,7 @@ app.get('/weather', (req, res) => {
         })
     }
 
-    geocode(req.query.address, (error, { latitude, longitude, location, location2, location3 } = {} ) => {
+    geocode(req.query.address, (error, { latitude, longitude, location } = {} ) => {
         if (error) {
             return res.send({
                 error
